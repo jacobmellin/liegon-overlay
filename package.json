@@ -3,9 +3,16 @@
   "version": "1.0.0",
   "description": "OBS Overlay for the Liegon Twitch Channel",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild --bundle src/index.ts --outfile=www/scripts/bundle.js",
+    "start": "npm run build -- --servedir=www --watch"
+  },
+  "dependencies": {
+    "@rbnlffl/esbuild-plugin-browser-sync": "^0.0.1",
+    "esbuild": "0.23.1"
+  }
 }
